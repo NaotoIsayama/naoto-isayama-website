@@ -352,11 +352,11 @@ footer p {
 
     /* Undo hover effect for mobile */
     nav:has(li:hover) + img {
-        filter: none;
+        -hover--blur: 0px;
     }
 
     header:has(a img:hover) ~ img {
-        filter: none;
+        -hover--blur: 0px;
     }
 
     #custom-cursor {
@@ -409,6 +409,10 @@ footer p {
     .img-container {
         width: 100%;
         justify-content: center;
+    }
+
+    #aboutme-img {
+        width: 90%;
     }
 
 }
