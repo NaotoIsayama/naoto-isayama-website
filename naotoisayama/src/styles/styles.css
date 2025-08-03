@@ -375,6 +375,7 @@ footer p {
     padding: 1rem 0 1rem 0rem;
     box-sizing: border-box;
     overflow-x: scroll;
+    scroll-behavior: smooth;
     display: flex;
     gap: 3rem;
 }
