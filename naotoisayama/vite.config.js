@@ -6,6 +6,7 @@ export default defineConfig({
       input: {
         main: 'index.html',
         aboutme: 'aboutme.html',
+        mywork: 'mywork.html',
         // Add other pages as needed
       }
     }

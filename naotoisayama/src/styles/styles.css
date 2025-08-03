@@ -8,6 +8,11 @@ html {
     font-size: 16px;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     /* colors */
     --light-color:#FAF9F6;
@@ -21,8 +26,9 @@ html {
     --body-font: "Lato", serif;
 
     /* font sizes */
-    --body-size: 1.618rem; /* 1 * golden ratio*/
+    --body-size: clamp(1.0rem, 1.5vw, 5rem); /* 1 * golden ratio*/
     --title: clamp(4.0rem, 7vw, 8rem); /* 4 * golden ratio */ 
+    --secondary: clamp(3.0rem, 5vw, 5rem)
 }
 
 .header-font {
@@ -31,6 +37,13 @@ html {
     font-weight: 500;
     color: var(--light-color);
     transition: color 0.25s ease-in-out;
+}
+
+.secondary-font {
+    font-size: var(--secondary);
+    font-family: var(--header-font);
+    font-weight: 400;
+    color: var(--light-color);
 }
 
 .header-font:hover {
@@ -48,6 +61,12 @@ html {
     font-family: var(--body-font);
     font-weight: 300;
     font-size: var(--body-size);
+    line-height: 1.5;
+}
+
+.spacer {
+    display: block;
+    height: 2rem;
 }
 
 body {
@@ -57,7 +76,8 @@ body {
     min-width: 100vw;
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -79,7 +99,7 @@ a:hover {
 
 p {
     padding: 0;
-    margin: 0;
+    margin: 1.5rem 0;
 }
 
 .blur {
@@ -184,7 +204,7 @@ p {
 /*------ Blur flower image on non-home pages ------*/
 
 [data-blur="true"] + #flower-image {
-    --page-blur: 4px;
+    --page-blur: 16px;
 }
 
 [data-blur="false"] + #flower-image {
@@ -206,7 +226,7 @@ header {
 }
 
 header:has(a img:hover) ~ img {
-    filter: blur(4px) !important;
+    filter: blur(6px) !important;
 }
 
 #logo-link-wrapper {
@@ -240,7 +260,7 @@ nav {
 }
 
 .home-main:has(li:hover) + #flower-image {
-    --hover-blur: 4px !important;
+    --hover-blur: 6px !important;
 }
 
 #flower-image {
@@ -290,7 +310,30 @@ footer p {
 /*----end index.html styles ------*/
 
 .aboutMe-main {
-    height: 100%;
+    min-height: 100%;
+    height: max-content;
+    background-color: var(--transparent-color);
+    display: flex;
+    align-items: flex-start;
+    margin: 3rem 0;
+}
+
+.text-container {
+    padding: 1rem 0;
+    width: 50%;
+}
+
+.img-container {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#aboutme-img {
+    margin-top: 1rem;
+    aspect-ratio: 3/4;
+    width: 75%;
 }
 
 /*------ aboutme.html ------*/
