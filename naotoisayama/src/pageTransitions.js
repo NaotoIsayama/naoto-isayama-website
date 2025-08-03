@@ -15,7 +15,14 @@ barba.init({
     {
         namespace: 'mywork',
         afterEnter() {
+            cursor();
             scroll();
+        }
+    },
+    {
+        namespace: 'aboutme',
+        afterEnter() {
+            cursor();
         }
     }
   ],
