@@ -319,6 +319,15 @@ footer p {
     margin-top: 1rem;
     aspect-ratio: 3/4;
     width: 75%;
+    border: solid 10px var(--transparent-color);
+    filter: brightness(0.8);
+    transition: border 0.5s ease-in-out,
+                filter 0.5s ease-in-out;
+}
+
+#aboutme-img:hover {
+    border: solid 10px var(--accent-color);
+    filter: brightness(1);
 }
 
 /*------ END aboutme.html ------*/
