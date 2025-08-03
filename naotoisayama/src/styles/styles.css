@@ -1,0 +1,364 @@
+/*---CSS styles---*/
+/*---note that styles outside of media queries are for mobile---*/
+.borderred {
+    border: solid red;
+}
+
+html {
+    font-size: 16px;
+}
+
+:root {
+    /* colors */
+    --light-color:#FAF9F6;
+    --dark-color:#161616;
+    --accent-color: #855453;
+    --available-color: #00BD23;
+    --transparent-color: #00000000;
+
+    /* default fonts */
+    --header-font: "Gloock", serif;
+    --body-font: "Lato", serif;
+
+    /* font sizes */
+    --body-size: 1.618rem; /* 1 * golden ratio*/
+    --title: clamp(4.0rem, 7vw, 8rem); /* 4 * golden ratio */ 
+}
+
+.header-font {
+    font-size: var(--title);
+    font-family: var(--header-font);
+    font-weight: 500;
+    color: var(--light-color);
+    transition: color 0.25s ease-in-out;
+}
+
+.header-font:hover {
+    color: var(--accent-color);
+}
+
+.body-font-extra-light {
+    color: var(--light-color);
+    font-family: var(--body-font);
+    font-weight: 100;
+}
+
+.body-font-light {
+    color: var(--light-color);
+    font-family: var(--body-font);
+    font-weight: 300;
+    font-size: var(--body-size);
+}
+
+body {
+    cursor: none;
+    box-sizing: border-box;
+    min-height: 100vh;
+    min-width: 100vw;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    padding: 3% 5%;
+    position: relative;
+    /*these lines make percentage based sizing work*/
+    background-color: var(--dark-color);
+}
+
+a {
+    padding: 0;
+    margin: 0;
+}
+
+a:hover {
+    cursor: none;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+.blur {
+    filter: blur(4px);
+    transition: filter 0.75s ease-in-out;
+}
+
+/*--- Animations for barba.js---*/
+
+[data-barba="container"] {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* While the current container is leaving */
+.barba-leave-active {
+  opacity: 0;
+}
+
+/* The new container starts invisible */
+.barba-enter-active {
+  opacity: 0;
+}
+
+/* When the new container finishes entering */
+.barba-enter-to {
+  opacity: 1;
+}
+
+/*---slide up and fade animation---*/
+@keyframes slideUpAndFade{
+    from {
+        transform: translateY(25px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/*---color oscillation---*/
+@keyframes colorCycle {
+    from, to {background-color: var(--available-color);}
+    6.25% {background-color: #00CD23;}
+    12.5% {background-color: #00D323;}
+    18.75% {background-color: #00DD23;}
+    25% {background-color: #00E323;}
+    31.25% {background-color: #00ED23;}
+    37.5% {background-color: #00F323;}
+    43.75% {background-color: #00FD23;}
+    50% {background-color: #00FF23;}
+    56.25% {background-color: #00FD23;}
+    62.5% {background-color: #00F323;}
+    68.75% {background-color: #00ED23;}
+    75% {background-color: #00E323;}
+    81.25% {background-color: #00DD23;}
+    87.5% {background-color: #00D323;}
+    93.75% {background-color: #00CD23;}
+}
+
+/* grain oscillation--*/
+@keyframes grainOscillate {
+    0% { background-position: 0 0; }
+    50% { background-position: -150px -150px;}
+    100% { background-position: 150px 150px; }
+}
+
+#grain {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-image: url('../../public/grain.png');
+    background-repeat: repeat;
+    opacity: 0.3;
+    animation: grainOscillate 1.5s steps(10) infinite;
+}
+
+#custom-cursor {
+    position: fixed;
+    top: 10%;
+    left: 15% ;
+    width: 20px; /* or whatever size you want */
+    height: 20px;
+    background-image: url('../../public/custom-cursor.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease-out, width 0.2s ease-out, height 0.2s ease-out;
+}
+
+#custom-cursor.enlarged {
+    width: 23px;
+    height: 23px;
+    transform: translate(-50%, -50%) scale(1.25);
+}
+
+/*------ Blur flower image on non-home pages ------*/
+
+[data-blur="true"] + #flower-image {
+    --page-blur: 4px;
+}
+
+[data-blur="false"] + #flower-image {
+    --page-blur: 0px;
+}
+
+/*------ Blur flower image on non-home pages ------*/
+
+
+
+/*------------------------------styles for index.html------------------------------*/
+
+header {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+header:has(a img:hover) ~ img {
+    filter: blur(4px) !important;
+}
+
+#logo-link-wrapper {
+    width: 20%;
+}
+
+#logo {
+    width: 100%;
+    transition: border-bottom 0.25s ease-in-out;
+    animation: slideUpAndFade 1.0s forwards;
+}
+
+/*use this class if you want the oscilatting green icon*/
+#availability-indicator {
+    border-radius: 50%;
+    background-color: var(--available-color);
+    height: 12px;
+    width: 12px;
+    animation: colorCycle 1.25s infinite;
+}
+
+#live-clock {
+    animation: slideUpAndFade 0.75s forwards;
+}
+
+nav {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1% 0;
+}
+
+.home-main:has(li:hover) + #flower-image {
+    --hover-blur: 4px !important;
+}
+
+#flower-image {
+
+    --page-blur: 0px;
+    --hover-blur: 0px;
+    filter: blur(var(--page-blur)) blur(var(--hover-blur));
+
+    aspect-ratio: 16/9;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: -1 ;
+    width: 66%;
+    animation: slideUpAndFade 1.75s forwards;
+    transition: filter 0.25s ease-in-out;
+}
+
+ul {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    list-style-type: none;
+    transform: translateY(15px);
+    animation: slideUpAndFade 1.25s forwards;
+}
+
+li a {
+    text-decoration: none;  
+}
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 10%; 
+}
+
+footer p {
+    animation: slideUpAndFade 0.75s forwards;
+}
+
+/*----end index.html styles ------*/
+
+.aboutMe-main {
+    height: 100%;
+}
+
+/*------ aboutme.html ------*/
+
+/*------ END aboutme.html ------*/
+
+
+
+
+
+
+/*------------------------------styles for index.html------------------------------*/
+
+@media (max-width: 1025px) {
+
+    :root {
+        --title: clamp(3.0rem, 6vw, 6rem);
+    }
+    body {
+        padding: 10%;
+        overflow: scroll;
+        height: max-content;
+    }
+
+    /* Undo hover effect for mobile */
+    nav:has(li:hover) + img {
+        filter: none;
+    }
+
+    header:has(a img:hover) ~ img {
+        filter: none;
+    }
+
+    #custom-cursor {
+        display: none;
+    }
+ 
+    header {
+        flex-direction: column;
+        gap: 4rem;
+        align-items: flex-start;
+    }
+
+    #logo-link-wrapper {
+        width: 100%;
+    }
+
+    nav {
+        justify-content: flex-start;
+        margin: 4rem 0;
+    }
+
+    ul {
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    #flower-image {
+        width: 100%;
+    }
+
+    .image-blur {
+        filter: blur(4px);
+    }
+
+    footer {
+        justify-content: flex-start;
+    }
+
+}
