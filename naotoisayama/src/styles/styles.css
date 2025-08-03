@@ -142,26 +142,6 @@ p {
     }
 }
 
-/*---color oscillation---*/
-@keyframes colorCycle {
-    from, to {background-color: var(--available-color);}
-    6.25% {background-color: #00CD23;}
-    12.5% {background-color: #00D323;}
-    18.75% {background-color: #00DD23;}
-    25% {background-color: #00E323;}
-    31.25% {background-color: #00ED23;}
-    37.5% {background-color: #00F323;}
-    43.75% {background-color: #00FD23;}
-    50% {background-color: #00FF23;}
-    56.25% {background-color: #00FD23;}
-    62.5% {background-color: #00F323;}
-    68.75% {background-color: #00ED23;}
-    75% {background-color: #00E323;}
-    81.25% {background-color: #00DD23;}
-    87.5% {background-color: #00D323;}
-    93.75% {background-color: #00CD23;}
-}
-
 /* grain oscillation--*/
 @keyframes grainOscillate {
     0% { background-position: 0 0; }
@@ -235,7 +215,6 @@ header:has(a img:hover) ~ img {
 
 #logo {
     width: 100%;
-    transition: border-bottom 0.25s ease-in-out;
     animation: slideUpAndFade 1.0s forwards;
 }
 
@@ -249,7 +228,7 @@ header:has(a img:hover) ~ img {
 }
 
 #live-clock {
-    animation: slideUpAndFade 0.75s forwards;
+    animation: slideUpAndFade 1s forwards;
 }
 
 nav {
@@ -276,7 +255,7 @@ nav {
     z-index: -1 ;
     width: 66%;
     animation: slideUpAndFade 1.75s forwards;
-    transition: filter 0.25s ease-in-out;
+    transition: filter 0.15s ease-in-out;
 }
 
 ul {
@@ -289,7 +268,7 @@ ul {
     align-items: flex-end;
     list-style-type: none;
     transform: translateY(15px);
-    animation: slideUpAndFade 1.25s forwards;
+    animation: slideUpAndFade 1.5s forwards;
 }
 
 li a {
@@ -304,10 +283,14 @@ footer {
 }
 
 footer p {
-    animation: slideUpAndFade 0.75s forwards;
+    animation: slideUpAndFade 1s forwards;
 }
 
 /*----end index.html styles ------*/
+
+
+
+/*------ aboutme.html ------*/
 
 .aboutMe-main {
     min-height: 100%;
@@ -321,6 +304,7 @@ footer p {
 .text-container {
     padding: 1rem 0;
     width: 50%;
+    animation: slideUpAndFade 1s forwards;
 }
 
 .img-container {
@@ -328,6 +312,7 @@ footer p {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    animation: slideUpAndFade 1.5s forwards;
 }
 
 #aboutme-img {
@@ -335,8 +320,6 @@ footer p {
     aspect-ratio: 3/4;
     width: 75%;
 }
-
-/*------ aboutme.html ------*/
 
 /*------ END aboutme.html ------*/
 
@@ -347,7 +330,7 @@ footer p {
 
 /*------------------------------styles for index.html------------------------------*/
 
-@media (max-width: 1025px) {
+@media (max-width: 600px) {
 
     :root {
         --title: clamp(3.0rem, 6vw, 6rem);
@@ -402,6 +385,21 @@ footer p {
 
     footer {
         justify-content: flex-start;
+    }
+
+    /* ------ about us mobile styles------*/
+
+    .aboutMe-main {
+        flex-direction: column;
+    }
+
+    .text-container {
+        width: 100%;
+    }
+
+    .img-container {
+        width: 100%;
+        justify-content: center;
     }
 
 }
