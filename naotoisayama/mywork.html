@@ -52,8 +52,32 @@
 
     <!--main Content-->
     <!--Sized as the right 2/3rds of the page, right aligned, standard top padding-->
-    <section class="barba-container aboutMe-main fade" data-barba="container" data-barba-namespace="mywork" data-blur="true">
-        <h1 class="header-font">MY WORK</h1>
+    <section class="barba-container mywork__main fade" data-barba="container" data-barba-namespace="mywork" data-blur="true">
+        
+        <div class="mywork__text-container">
+            <h1 class="secondary-font">My Work</h1>
+            <p class="body-font-light">Take a look at some of my recent work. Hover over an image to read a short descript of the project, or click the link to view the live site in full.</p>
+            <p class="body-font-light">Projects marked "Sample" were created independently - either to experiemnt with new techniques, try new design directions, or explore unfamiliar industries.</p>
+        </div>
+
+        <div class="mywork__carousel">
+            <div class="mywork__project-card">
+                <div class="project-card__title">
+                    <span class="project-title">Paulco Landscaping</span>
+                    <div class="badge-font badge-new">NEW</div>
+                </div>
+                <img class="project-img" src="/public/paulco screencap.jpg" alt="">
+            </div>
+
+            <div class="mywork__project-card">
+                <div class="project-card__title">
+                    <span class="project-title">TK Photography</span>
+                    <div class="badge-font badge-in-progress">IN PROGRESS</div>
+                </div>
+                <img class="project-img" src="/public/Tk screen cap.jpg" alt="">
+            </div>
+        </div>
+        
     </section>
 
     <img id="flower-image" src="/public/Flowers.png" alt="">

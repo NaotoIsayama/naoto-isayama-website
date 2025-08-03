@@ -18,8 +18,10 @@ html {
     --light-color:#FAF9F6;
     --dark-color:#161616;
     --accent-color: #855453;
-    --available-color: #00BD23;
     --transparent-color: #00000000;
+    --badge-new: #2a5304;
+    --badge-in-progress: #735806;
+    --badge-sample: #5c1e21;
 
     /* default fonts */
     --header-font: "Gloock", serif;
@@ -28,7 +30,8 @@ html {
     /* font sizes */
     --body-size: clamp(1.0rem, 1.5vw, 5rem); /* 1 * golden ratio*/
     --title: clamp(4.0rem, 7vw, 8rem); /* 4 * golden ratio */ 
-    --secondary: clamp(3.0rem, 5vw, 5rem)
+    --secondary: clamp(3.0rem, 5vw, 5rem);
+    --project: clamp(1.5rem, 2vw, 4rem);
 }
 
 .header-font {
@@ -62,6 +65,21 @@ html {
     font-weight: 300;
     font-size: var(--body-size);
     line-height: 1.5;
+}
+
+.project-title {
+    color: var(--light-color);
+    font-family: var(--header-font);
+    font-weight: 300;
+    font-size: var(--project);
+    line-height: 1.5;
+}
+
+.badge-font {
+    color: var(--light-color);
+    font-family: var(--header-font);
+    font-size: var(--body-size);
+    line-height: 1;
 }
 
 .spacer {
@@ -292,22 +310,21 @@ footer p {
 
 /*------ aboutme.html ------*/
 
-.aboutMe-main {
+.aboutMe__main {
     min-height: 100%;
     height: max-content;
-    background-color: var(--transparent-color);
     display: flex;
     align-items: flex-start;
     margin: 3rem 0;
 }
 
-.text-container {
+.aboutme__text-container {
     padding: 1rem 0;
     width: 50%;
     animation: slideUpAndFade 1s forwards;
 }
 
-.img-container {
+.aboutme__img-container {
     width: 50%;
     display: flex;
     justify-content: flex-end;
@@ -331,6 +348,79 @@ footer p {
 }
 
 /*------ END aboutme.html ------*/
+
+/*------ mywork.html------*/
+
+.mywork__main {
+    height: 50vh;
+    min-height: max-content;
+    display: flex;
+    align-items: flex-start;
+    margin: 3rem 0;
+}
+
+.mywork__text-container {
+    /*border: solid red;*/
+    height: 100%;
+    padding: 1rem 3rem 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 40%;
+    animation: slideUpAndFade 1s forwards;
+}
+
+.mywork__carousel {
+    width: 60%;
+    padding: 1rem 0 1rem 0rem;
+    box-sizing: border-box;
+    overflow-x: scroll;
+    display: flex;
+    gap: 3rem;
+}
+
+.mywork__carousel::-webkit-scrollbar {
+    height: 5px;
+    background-color: #b9b9b8;
+}
+
+.mywork__carousel::-webkit-scrollbar-thumb {
+    height: 5px;
+    background-color: #484848;
+}
+
+.mywork__project-card {
+    display: inline-block;
+    width: 100%;
+    animation: slideUpAndFade 0.75s forwards;
+}
+
+.project-card__title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.badge-new, .badge-in-progress, .badge-sample {
+    padding: 0.25rem 1.5rem;
+    
+    border-radius: 25px;
+    margin: 0 1rem;
+}
+
+.badge-new { background-color: var(--badge-new); }
+.badge-in-progress { background-color: var(--badge-in-progress); }
+
+.project-img {
+    aspect-ratio: 16/9;
+    width: 50vw;
+    object-fit: cover;
+    object-position: left center;
+}
+
+/*------ END mywork.html------*/
+
 
 
 
