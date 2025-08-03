@@ -1,4 +1,4 @@
-const container = document.getElementsByClassName('mywork__carousel');
+const container = document.getElementById('scroll-container');
 
 container.addEventListener('wheel', function (e) {
   // Only scroll horizontally if shift key is not held (to avoid conflict)
