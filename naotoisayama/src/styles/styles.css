@@ -354,7 +354,7 @@ footer p {
     }
 
     .image-blur {
-        filter: blur(4px);
+        filter: blur(4px) !important;
     }
 
     footer {
