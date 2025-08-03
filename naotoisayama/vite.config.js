@@ -7,6 +7,8 @@ export default defineConfig({
         main: 'index.html',
         aboutme: 'aboutme.html',
         mywork: 'mywork.html',
+        contact: 'contact.html',
+        blog: 'blog.html'
         // Add other pages as needed
       }
     }
