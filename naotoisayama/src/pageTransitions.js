@@ -1,8 +1,24 @@
 import barba from '@barba/core';
+import { cursor } from './cursor.js';
+import { scroll } from './scroll.js';
  
 let time = 750;
 
 barba.init({
+  views: [
+    {
+        namespace: 'home',
+        afterEnter() {
+            cursor();
+        }
+    },
+    {
+        namespace: 'mywork',
+        afterEnter() {
+            scroll();
+        }
+    }
+  ],
   transitions: [
     {
       name: 'default-transition',
