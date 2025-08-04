@@ -392,6 +392,7 @@ footer p {
 }
 
 .mywork__project-card {
+    position: relative;
     display: inline-block;
     width: 100%;
     animation: slideUpAndFade 0.75s forwards;
@@ -419,7 +420,30 @@ footer p {
     width: 50vw;
     object-fit: cover;
     object-position: left center;
+    filter: brightness(1);
+    transition: filter 0.25s ease-in-out;
+    z-index: 0;
 }
+
+.project-img:hover {
+    filter: brightness(0.1);
+}
+
+.overlay-text {
+    pointer-events: none;
+    opacity: 0;
+    top: 40%;
+    left: 10%;
+    width: 80%;
+    position: absolute;
+    z-index: 2;
+    transition: opacity 0.25s ease-in-out;
+}
+
+.project-link:has(.project-img:hover) + .overlay-text {
+    opacity: 1;
+}
+
 
 /*------ END mywork.html------*/
 
