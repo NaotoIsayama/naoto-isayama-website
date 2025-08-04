@@ -623,4 +623,25 @@ footer p {
         opacity: 0;
     }
 
+    /*--- contact ---*/
+
+    .contact-main {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .contact__text-container {
+        width: 100%;
+    }
+
+    .contact__img-container {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .email {
+        text-align: center;
+        margin: 2rem 0;
+    }
+
 }
