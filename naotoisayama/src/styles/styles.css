@@ -512,6 +512,7 @@ footer p {
     /*------ mywork.html------*/
 
     .mywork__main {
+        height: max-content;
         flex-direction: column;
     }
 
