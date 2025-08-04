@@ -567,7 +567,7 @@ footer p {
 
     /* ------ about us mobile styles------*/
 
-    .aboutMe-main {
+    .aboutMe__main {
         flex-direction: column;
     }
 
