@@ -626,6 +626,7 @@ footer p {
     /*--- contact ---*/
 
     .contact-main {
+        height: max-content;
         flex-direction: column;
         gap: 3rem;
     }
