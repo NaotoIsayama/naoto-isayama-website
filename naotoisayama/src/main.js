@@ -4,3 +4,4 @@ import './clock.js';
 import './onTouch.js';
 import './cursor.js';
 import './scroll.js';
+import './removeFlowers.js';

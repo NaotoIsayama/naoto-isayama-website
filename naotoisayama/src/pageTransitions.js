@@ -1,6 +1,7 @@
 import barba from '@barba/core';
 import { cursor } from './cursor.js';
 import { scroll } from './scroll.js';
+import { removeFlowers, addFlowers } from './removeFlowers.js';
  
 let time = 750;
 
@@ -10,6 +11,7 @@ barba.init({
         namespace: 'home',
         afterEnter() {
             cursor();
+            addFlowers();
         }
     },
     {
@@ -17,12 +19,21 @@ barba.init({
         afterEnter() {
             cursor();
             scroll();
+            addFlowers();
         }
     },
     {
         namespace: 'aboutme',
         afterEnter() {
             cursor();
+            addFlowers();
+        }
+    },
+    {
+        namespace: 'contact',
+        afterEnter() {
+            cursor();
+            removeFlowers();
         }
     }
   ],

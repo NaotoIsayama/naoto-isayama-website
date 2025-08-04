@@ -110,6 +110,7 @@ body {
 a {
     padding: 0;
     margin: 0;
+    text-decoration: none;
 }
 
 a:hover {
@@ -148,6 +149,10 @@ p {
   opacity: 1;
 }
 
+#flower-image.hide {
+    opacity: 0;
+}
+
 /*---slide up and fade animation---*/
 @keyframes slideUpAndFade{
     from {
@@ -158,6 +163,17 @@ p {
     to {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+/*---slide up animation, for flower image only---*/
+@keyframes slideUp{
+    from {
+        transform: translateY(25px);
+    }
+
+    to {
+        transform: translateY(0);
     }
 }
 
@@ -209,10 +225,6 @@ p {
 [data-blur="false"] + #flower-image {
     --page-blur: 0px;
 }
-
-/*------ Blur flower image on non-home pages ------*/
-
-
 
 /*------------------------------styles for index.html------------------------------*/
 
@@ -271,10 +283,12 @@ nav {
     position: fixed;
     bottom: 0;
     left: 0;
-    z-index: -1 ;
+    opacity: 1;
+    z-index: -1;
     width: 66%;
-    animation: slideUpAndFade 1.75s forwards;
-    transition: filter 0.15s ease-in-out;
+    animation: slideUp 1.75s forwards;
+    transition: filter 0.25s ease-in-out, 
+                opacity 0.25s ease-in-out;
 }
 
 ul {
@@ -393,6 +407,7 @@ footer p {
 
 .mywork__project-card {
     position: relative;
+    border-radius: 5px;
     display: inline-block;
     width: 100%;
     animation: slideUpAndFade 0.75s forwards;
@@ -444,16 +459,49 @@ footer p {
     opacity: 1;
 }
 
-
 /*------ END mywork.html------*/
 
+.contact-main {
+    height: 50vh;
+    min-height: max-content;
+    display: flex;
+    align-items: flex-start;
+    margin: 3rem 0;
+}
+
+.contact__text-container {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: slideUpAndFade 1s forwards;
+}
+
+.email {
+    transition: color 0.25s ease-in-out;
+}
+
+.email:hover {
+    color: var(--accent-color);
+}
+
+.contact__img-container {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#contact-img {
+    height: 60vh;
+    animation: slideUpAndFade 1.25s forwards;
+}
 
 
+/*------ contact.html ------*/
 
-
-
-
-/*------------------------------styles for index.html------------------------------*/
+/*------ END contact.html ------*/
 
 @media (max-width: 600px) {
 
