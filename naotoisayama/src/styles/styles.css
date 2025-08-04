@@ -562,4 +562,12 @@ footer p {
         display: none;
     }
 
+    .project-img:hover {
+    filter: none;
+    }
+
+    .project-link:has(.project-img:hover) + .overlay-text {
+        opacity: 0;
+    }
+
 }
