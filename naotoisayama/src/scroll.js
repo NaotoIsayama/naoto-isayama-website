@@ -5,7 +5,10 @@ export function scroll() {
     // Only scroll horizontally if shift key is not held (to avoid conflict)
     if (e.deltaY !== 0 && !e.shiftKey) {
         e.preventDefault();
-        container.scrollLeft += e.deltaY;
+        container.scrollBy({
+            left: e.deltaY,
+            behavior: 'smooth'
+        });
     }
     }, { passive: false });
 }
