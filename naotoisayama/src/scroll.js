@@ -6,7 +6,7 @@ export function scroll() {
     if (e.deltaY !== 0 && !e.shiftKey) {
         e.preventDefault();
         container.scrollBy({
-            left: e.deltaY,
+            left: e.deltaY * 2,
             behavior: 'smooth'
         });
     }
