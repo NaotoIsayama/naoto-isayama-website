@@ -571,11 +571,11 @@ footer p {
         flex-direction: column;
     }
 
-    .text-container {
+    .aboutme__text-container {
         width: 100%;
     }
 
-    .img-container {
+    .aboutme__img-container {
         width: 100%;
         justify-content: center;
     }
