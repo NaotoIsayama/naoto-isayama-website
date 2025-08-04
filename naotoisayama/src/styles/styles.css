@@ -28,6 +28,7 @@ html {
     --body-font: "Lato", serif;
 
     /* font sizes */
+    --badge-size: clamp(0.75rem, 1vw, 1.5vw);
     --body-size: clamp(1.0rem, 1.5vw, 5rem); /* 1 * golden ratio*/
     --title: clamp(4.0rem, 7vw, 8rem); /* 4 * golden ratio */ 
     --secondary: clamp(3.0rem, 5vw, 5rem);
@@ -78,7 +79,7 @@ html {
 .badge-font {
     color: var(--light-color);
     font-family: var(--header-font);
-    font-size: var(--body-size);
+    font-size: var(--badge-size);
     line-height: 1;
 }
 
@@ -504,6 +505,36 @@ footer p {
 
     #aboutme-img {
         width: 90%;
+    }
+
+    /*------ end aboutus ------*/
+
+    /*------ mywork.html------*/
+
+    .mywork__main {
+        flex-direction: column;
+    }
+
+    .mywork__text-container {
+        width: 100%;
+        height: max-content;
+    }
+
+    .mywork__carousel {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .project-img {
+        width: 100%;
+    }
+
+    .mywork__carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .mywork__carousel::-webkit-scrollbar-thumb {
+        display: none;
     }
 
 }
