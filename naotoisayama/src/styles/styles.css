@@ -396,13 +396,12 @@ footer p {
 
 .mywork__carousel::-webkit-scrollbar {
     height: 8px;
-    background-color: #b9b9b8;
+    background-color: var(--light-color);
 }
 
 .mywork__carousel::-webkit-scrollbar-thumb {
     height: 8px;
-    border-radius: 5px;
-    background-color: #484848;
+    background-color: var(--accent-color);
 }
 
 .mywork__project-card {
