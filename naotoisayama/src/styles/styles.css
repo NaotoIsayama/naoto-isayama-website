@@ -570,6 +570,10 @@ footer p {
         justify-content: flex-start;
     }
 
+    footer p {
+        margin: auto;
+    }
+
     /* ------ about us mobile styles------*/
 
     .aboutMe__main {
