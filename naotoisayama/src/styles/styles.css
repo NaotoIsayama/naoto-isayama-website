@@ -218,11 +218,11 @@ p {
 
 /*------ Blur flower image on non-home pages ------*/
 
-[data-blur="true"] + #flower-image {
+[data-blur="true"] + picture img#flower-image {
     --page-blur: 16px;
 }
 
-[data-blur="false"] + #flower-image {
+[data-blur="false"] + picture img#flower-image {
     --page-blur: 0px;
 }
 
