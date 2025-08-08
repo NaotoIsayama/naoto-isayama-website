@@ -269,7 +269,7 @@ nav {
     padding: 1% 0;
 }
 
-.home-main:has(li:hover) + #flower-image {
+.home-main:has(li:hover) + picture img#flower-image {
     --hover-blur: 6px !important;
 }
 
