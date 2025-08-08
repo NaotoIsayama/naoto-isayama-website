@@ -47,7 +47,13 @@
 
     <!--live clock-->
     <header>
-        <a id="logo-link-wrapper" href="/"><img id="logo" src="public/logo.svg"></a>
+        <a id="logo-link-wrapper" href="/">
+            <picture>
+                <source srcset="/logo.svg" media="(min-width: 600px)"/>
+                <source srcset="/logo-mobile.svg" media="(max-width: 599px)"/>
+                <img id="logo" src="public/logo.svg" alt="">
+            </picture>
+        </a>
         <span id="live-clock" class="body-font-light"></span>
     </header>
 
