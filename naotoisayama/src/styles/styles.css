@@ -558,8 +558,7 @@ footer p {
 
     #flower-image {
         position: relative;
-        margin-left: -25%;
-        width: 175%;
+        width: 100%;
     }
 
     .image-blur {
