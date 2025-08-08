@@ -557,7 +557,6 @@ footer p {
     }
 
     #flower-image {
-        filter: brightness(0.75);
         aspect-ratio: 3/4;
         width: 100%;
     }
