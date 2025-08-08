@@ -553,6 +553,7 @@ footer p {
     }
 
     #flower-image {
+        position: relative;
         width: 100%;
     }
 
