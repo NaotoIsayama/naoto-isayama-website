@@ -533,7 +533,7 @@ footer p {
  
     header {
         flex-direction: column;
-        gap: 4rem;
+        gap: 2rem;
         align-items: flex-start;
     }
 
@@ -542,20 +542,20 @@ footer p {
     }
 
     nav {
-        justify-content: flex-start;
+        justify-content: center;
         margin: 4rem 0;
     }
 
     ul {
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
         gap: 1.5rem;
     }
 
     #flower-image {
         position: relative;
         margin-left: -25%;
-        width: 150%;
+        width: 175%;
     }
 
     .image-blur {
